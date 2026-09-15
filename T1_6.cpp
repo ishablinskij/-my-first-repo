@@ -3,33 +3,19 @@
  * Числа a , b , d вводятся с клавиатуры( a 0 = a ).*/
 #include <iostream>
 
+using namespace std;
 
-int main() {
-    using std::cout;
-    using std::cin;
-    using std::endl;
+int main()
+{
     int a, b, d;
-    cout << " enter a b d ([a,b]) " << endl;
     cin >> a >> b >> d;
-    if (d == 0) {
-        if (a % 3 == 0)
-            cout << a;
-    }
-    else if (d > 0) {
-        int ak = a;
-        while (ak <= b) {
-            if (ak % 3 == 0)
-                cout << ak << endl;
-            ak += d;
-        }
-    }
-    else if(d<0){
-        int ak = a;
-        while (ak >= b) {
-            if (ak % 3 == 0)
-                cout << ak << endl;
-            ak += d;
+    int n = (b - a)/d + 1;
+    for (int i = 1; i <= n; i++) {
+        int an = (a + (i - 1) * d);
+        if (an % 3 == 0) {
+            cout << an << " ";
         }
     }
     return 0;
 }
+
